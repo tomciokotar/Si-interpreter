@@ -1,13 +1,14 @@
-Si (C-like) language interpreter
+#Si interpreter
+C-like language interpreter
 
 BNFC grammar: Si.cf
 Example programs: good and bad folders
 
-How to run (alex, happy and ghc needed):
-$ make
-$ ./interpreter < <file with code>
+#How to run
+```$ make``` (alex, happy and ghc required)
+```$ ./interpreter < <file with code>```
 
-Functionality:
+#Functionality
 - types: int, bool, char, string, void (the last one can contain only one value that means nothing)
 - basic C instructions: arithmetic, comaprisions, if, while, for, += and ++ operators, char<->int conversions
 - functions (incl. anonymous functions, passing arguments by value and by reference, recursion)
