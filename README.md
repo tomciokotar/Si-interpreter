@@ -2,10 +2,12 @@
 C-like language interpreter
 
 BNFC grammar: Si.cf
+
 Example programs: good and bad folders
 
 #How to run
 ```$ make``` (alex, happy and ghc required)
+
 ```$ ./interpreter < <file with code>```
 
 #Functionality
@@ -19,10 +21,10 @@ Example programs: good and bad folders
 - static type checking before the execution
 
 Default values:
-int - 0
-bool - false
-char - char with index 0
-string - ""
-int[] - empty array of ints
+- int - 0
+- bool - false
+- char - char with index 0
+- string - ""
+- int[] - empty array of ints
 
 The way the language works slightly differs from how C works, look at the grammar and code examples to know more.
