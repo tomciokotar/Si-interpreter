@@ -1,0 +1,8 @@
+int sqr(int a)
+{
+	return a*a;
+};
+
+int sqr = sqr(5);	// przeslaniamy funkcje
+
+sqr(5);	// sqr to juz nie funkcja...

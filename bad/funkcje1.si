@@ -1,0 +1,10 @@
+void swap(int &a, int &b)
+{
+	int z = a;
+	a = b;
+	b = z;
+};
+
+int a = 5;
+int b = 10;
+swap(a, 10);	// liczby nie przekażemy przez referencję

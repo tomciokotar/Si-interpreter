@@ -1,0 +1,35 @@
+int liczba = 1;
+void a()
+{
+	println liczba++;
+	
+	int liczba = 2;
+	void b()
+	{
+		println liczba;
+		
+		int liczba = 3;
+		void c()
+		{
+			println liczba;
+		};
+		
+		c();
+	};
+	
+	b();
+};
+
+a();
+println "Poza funkcja: " ** liczba;
+
+int abc = 1;
+
+void funkcja()
+{
+	println "abc = " ** abc;
+};
+
+int abc = 2;
+
+funkcja();

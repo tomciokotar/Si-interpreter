@@ -1,0 +1,8 @@
+void a(int liczba)
+{
+	void a(string napis)
+	{
+	};
+	
+	a(5);	// a pobierajace inta zostalo przesloniete przez inne a
+};

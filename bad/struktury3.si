@@ -1,0 +1,12 @@
+struct abc {
+	int a = 5;
+	int b = 10;
+	int a;	// nie mozemy drugi raz uzyc tej samej nazwy
+	string napisy[3];
+	(int; int) plus1 = (int; int a) {return a+1;};
+	
+	bool toSamo(string a, string b)
+	{
+		return a == b;
+	};
+};

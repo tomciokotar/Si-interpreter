@@ -1,0 +1,12 @@
+auto silnia = 1;
+auto n = 30;
+
+for (int i = 2; i <= n; i++)
+	silnia *= i;
+
+print silnia;
+
+if (silnia % 2)	// int zamiast boola
+	println " - parzysta (no raczej)";
+else
+	println " - nieparzysta";

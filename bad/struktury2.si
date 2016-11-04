@@ -1,0 +1,15 @@
+struct abc {
+	int a = 5;
+	int b = 10;
+	string napisy[3];
+	(int; int) plus1 = (int; int a) {return a+1;};
+	
+	bool toSamo(string a, string b)
+	{
+		return a == b;
+	};
+	
+	struct def {	// nie mozemy zdefiniowac nowego typu w srodku (blad parsera)
+		int a;
+	};
+};

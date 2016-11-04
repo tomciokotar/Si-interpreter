@@ -1,0 +1,12 @@
+auto silnia = 1;
+auto n = 30;
+
+for (int i = 2; i <= n;)	// blad parsera (musi byc wyrazenie na koncu)
+	silnia *= i++;
+
+print silnia;
+
+if (silnia % 2 == 0)
+	println " - parzysta (no raczej)";
+else
+	println " - nieparzysta";

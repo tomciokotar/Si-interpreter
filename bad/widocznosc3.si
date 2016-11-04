@@ -1,0 +1,7 @@
+struct abc {
+	int a;
+};
+
+struct abc {	// nie mozna przeslonic nazwy typu
+	int b;
+};

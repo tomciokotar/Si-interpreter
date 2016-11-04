@@ -1,0 +1,98 @@
+comment "//" ;
+comment "/*" "*/" ;
+
+Prog. Program ::= [Stm] ;
+
+terminator Stm "" ;
+terminator Dec1 ";" ;
+separator Param "," ;
+separator ParamType "," ;
+separator Exp "," ;
+
+DFunc.	Dec1 ::= Type Ident "(" [Param] ")" "{" [Stm] "}" ;
+DVar.	Dec1 ::= Type Ident ;
+DInit.	Dec1 ::= Type Ident "=" Exp ;
+DAuto.	Dec1 ::= "auto" Ident "=" Exp ;
+DArr.	Dec1 ::= Type Ident "[" Exp "]" ;
+DStruct. Dec ::= "struct" Ident "{" [Dec1] "}" ;
+
+_.	Dec ::= Dec1 ;
+
+Param.	Param ::= ParamType Ident ;
+
+ParamTypeVal.	ParamType ::= Type ;
+ParamTypeRef.	ParamType ::= Type "&" ;
+
+SDec.	Stm ::= Dec ";" ;
+SExp.	Stm ::= Exp ";" ;
+SBlock.	Stm ::= "{" [Stm] "}" ;
+SIf.	Stm ::= "if" "(" Exp ")" Stm ;
+SIfElse. Stm ::= "if" "(" Exp ")" Stm "else" Stm ;
+SWhile.	Stm ::= "while" "(" Exp ")" Stm ;
+SFor.	Stm ::= "for" "(" Dec ";" Exp ";" Exp ")" Stm ;
+SRet.	Stm ::= "return" ";" ;
+SRetExp. Stm ::= "return" Exp ";" ;
+SPrint.	Stm ::= "print" Exp ";" ;
+SPrintLn. Stm ::= "println" Exp ";" ;
+
+EAss.	Exp ::= Var "=" Exp ;
+EIncL.	Exp ::= "++" Var ;
+EIncR.	Exp ::= Var "++" ;
+EDecL.	Exp ::= "--" Var ;
+EDecR.	Exp ::= Var "--" ;
+
+EAddAss.	Exp ::= Var "+=" Exp ;
+ESubAss.	Exp ::= Var "-=" Exp ;
+EMulAss.	Exp ::= Var "*=" Exp ;
+EDivAss.	Exp ::= Var "/=" Exp ;
+EModAss.	Exp ::= Var "%=" Exp ;
+
+ENot.	Exp1 ::= "~" Exp1 ;
+EAnd.	Exp1 ::= Exp1 "&&" Exp2 ;
+EOr.	Exp1 ::= Exp1 "||" Exp2 ;
+
+EEq.	Exp2 ::= Exp3 "==" Exp3 ;
+ENeq.	Exp2 ::= Exp3 "!=" Exp3 ;
+ELt.	Exp2 ::= Exp3 "<" Exp3 ;
+EElt.	Exp2 ::= Exp3 "<=" Exp3 ;
+EGt.	Exp2 ::= Exp3 ">" Exp3 ;
+EEgt.	Exp2 ::= Exp3 ">=" Exp3 ;
+
+EConc.	Exp3 ::= Exp3 "**" Exp4 ;
+
+EAdd.	Exp4 ::= Exp4 "+" Exp5 ;
+ESub.	Exp4 ::= Exp4 "-" Exp5 ;
+
+EMul.	Exp5 ::= Exp5 "*" Exp6 ;
+EDiv.	Exp5 ::= Exp5 "/" Exp6 ;
+EMod.	Exp5 ::= Exp5 "%" Exp6 ;
+
+EInt.	Exp6 ::= Integer ;
+ETrue.	Exp6 ::= "true" ;
+EFalse.	Exp6 ::= "false" ;
+EChar.	Exp6 ::= Char ;
+EStr.	Exp6 ::= String ;
+EVar.	Exp6 ::= Var ;
+ECall.	Exp6 ::= Var "(" [Exp] ")" ;
+EFunc.	Exp6 ::= "(" Type ";" [Param] ")" "{" [Stm] "}" ;
+EArr.	Exp6 ::= "{" [Exp] "}" ;
+EIntToChar.	Exp6 ::= "(char)" Exp ;
+ECharToInt.	Exp6 ::= "(int)" Exp ;
+
+coercions Exp 6 ;
+
+TInt.	Type ::= "int" ;
+TBool.	Type ::= "bool" ;
+TChar.	Type ::= "char" ;
+TString. Type ::= "string" ;
+TVoid.	Type ::= "void" ;
+TArr.	Type ::= Type "[]" ;
+TStruct. Type ::= "struct" Ident ;
+TFunc.	Type ::= "(" Type ";" [ParamType] ")" ;
+
+VarArr.		Var ::= Var "[" Exp "]" ;
+VarStruct.	Var1 ::= Var "." Ident ;
+VarIdent.	Var2 ::= Ident ;
+
+_.	Var ::= Var1 ;
+_.	Var1 ::= Var2 ;

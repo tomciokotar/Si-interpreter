@@ -1,0 +1,62 @@
+void swap(int &a, int &b)
+{
+	int z = a;
+	a = b;
+	b = z;
+};
+
+int a = 5;
+int b = 10;
+swap(a, b);
+
+println "a = " ** a;
+println "b = " ** b;
+
+int fib(int n)
+{
+	if (n == 0 || n == 1)
+		return 1;
+	else
+		return fib(n-2) + fib(n-1);
+};
+
+println "fib(10) = " ** fib(10);
+
+(int; int[], int) zrobDodawanie()
+{
+	return (int; int[] tab, int n) {	// konstrukcja anonimowa
+		int suma = 0;
+		
+		for (int i = 0; i < n; i++)
+			suma += tab[i];
+		
+		return suma;
+	};
+};
+
+auto dodaj = zrobDodawanie();
+int[] liczby = {1,2,3,4,5,6,7,8,9,10};
+
+println "1 + ... + 10 = " ** dodaj(liczby, 10);
+
+int sqr(int a)
+{
+	return a*a;
+};
+
+int[] map(int[] tab, (int; int) funkcja, int n)
+{
+	int wynik[n];
+	
+	for (int i = 0; i < n; i++)
+		wynik[i] = funkcja(tab[i]);
+	
+	return wynik;
+};
+
+int[] kwadraty = map(liczby, sqr, 10);
+
+print "Kwadraty liczb: ";
+
+for (int i = 0; i < 10; i++)
+	print kwadraty[i] ** " ";

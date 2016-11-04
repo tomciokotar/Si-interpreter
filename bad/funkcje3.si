@@ -1,0 +1,20 @@
+(int; int[], int) zrobDodawanie()
+{
+	return (int; int[] tab, int n) {
+		int suma = 0;
+		
+		for (int i = 0; i < n; i++)
+			suma += tab[i];
+		
+		return suma;
+	};
+};
+
+auto dodaj = zrobDodawanie();
+int liczby[10];
+
+for (int i = 0; i < 10; i++)
+	liczby[i] = i + 1;
+
+print "1 + ... + 10 = ";
+println dodaj(liczby, liczby);	// argument zlego typu

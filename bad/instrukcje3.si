@@ -1,0 +1,12 @@
+auto silnia = 1;
+auto n = 30;
+
+for (string i = 2; i <= n; i++)	// niepoprawny typ i
+	silnia *= i;
+
+print silnia;
+
+if (silnia % 2 == 0)
+	println " - parzysta (no raczej)";
+else
+	println " - nieparzysta";

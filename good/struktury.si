@@ -1,0 +1,35 @@
+struct abc {
+	int a = 5;
+	int b = 10;
+	string napisy[3];
+	(int; int) plus1 = (int; int a) {return a+1;};
+	
+	bool toSamo(string a, string b)
+	{
+		return a == b;
+	};
+};
+
+struct def {
+	struct abc siema;
+};
+
+struct def no;
+
+no.siema.napisy[0] = "zero";
+no.siema.napisy[1] = "jeden";
+no.siema.napisy[2] = "dwa";
+
+no.siema.napisy[0] = no.siema.napisy[1] ** no.siema.napisy[2];
+
+println no.siema.napisy[0];
+
+no.siema.napisy[1] = no.siema.napisy[0];
+
+println no.siema.toSamo(no.siema.napisy[0], no.siema.napisy[1]);
+
+struct abc dodajemy;
+
+dodajemy.b += dodajemy.plus1(dodajemy.a);
+
+println dodajemy.b;
